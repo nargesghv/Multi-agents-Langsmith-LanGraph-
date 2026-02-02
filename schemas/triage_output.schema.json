@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["category", "priority", "routing", "summary", "customer_reply", "questions", "tags", "confidence", "actions"],
+  "properties": {
+    "category": { "type": "string", "enum": ["billing", "bug", "feature", "account", "outage", "security", "other"] },
+    "priority": { "type": "string", "enum": ["P0", "P1", "P2", "P3"] },
+    "routing": { "type": "string" },
+    "summary": { "type": "string", "minLength": 5 },
+    "customer_reply": { "type": "string", "minLength": 10 },
+    "questions": { "type": "array", "items": { "type": "string" } },
+    "tags": { "type": "array", "items": { "type": "string" } },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "actions": { "type": "array", "items": { "type": "string" } },
+    "prompt_version": { "type": "string" },
+    "model_version": { "type": "string" }
+  },
+  "additionalProperties": false
+}

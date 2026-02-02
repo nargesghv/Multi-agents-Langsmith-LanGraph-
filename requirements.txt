@@ -1,0 +1,6 @@
+deepagents
+langsmith
+python-dotenv
+pydantic
+fastapi
+uvicorn

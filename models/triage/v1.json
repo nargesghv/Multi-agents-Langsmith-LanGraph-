@@ -1,0 +1,8 @@
+{
+  "provider": "ollama",
+  "model": "granite4:micro-h",
+  "temperature": 0.2,
+  "top_p": 0.9,
+  "timeout_sec": 60,
+  "base_url": "http://localhost:11434"
+}
