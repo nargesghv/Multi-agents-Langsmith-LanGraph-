@@ -15,7 +15,7 @@ This project applies **software engineering discipline** to AI systems.
 ---
 
 ## Architecture Overview
-
+```bash
 ┌──────────────┐
 │ Support      │
 │ Ticket +     │
@@ -45,7 +45,7 @@ This project applies **software engineering discipline** to AI systems.
 │ Final Safe Output      │
 │ (regression-verified) │
 └────────────────────────┘
-
+```
 
 
 ---
