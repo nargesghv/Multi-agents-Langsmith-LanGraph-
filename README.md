@@ -1,11 +1,11 @@
-# 🧠 Multi-Agent LLM Support Triage System
+# Multi-Agent LLM Support Triage System
 
 A **production-grade, contract-based multi-agent LLM system** for support-ticket triage.  
 Built to make **probabilistic LLMs safe, testable, and deployable** using deterministic guarantees, regression tests, and versioning.
 
 ---
 
-## 🎯 Core Idea
+## Core Idea
 
 LLMs are stochastic → outputs can drift  
 So we **define a contract** and **enforce it automatically**.
@@ -14,13 +14,43 @@ This project applies **software engineering discipline** to AI systems.
 
 ---
 
-## 🧩 Architecture Overview
+## Architecture Overview
+
+┌──────────────┐
+│ Support      │
+│ Ticket +     │
+│ Signals      │
+└──────┬───────┘
+       │
+       ▼
+┌────────────────────────┐
+│ Orchestrator           │
+│ (agents/orchestrator)  │
+└──────┬─────────────────┘
+       │
+       ├──► Classifier Sub-Agent
+       │     (category, priority, routing)
+       │
+       ├──► Responder Sub-Agent
+       │     (questions, actions, reply)
+       │
+       ▼
+┌────────────────────────┐
+│ Contract Enforcement   │
+│ (schema + invariants)  │
+└──────┬─────────────────┘
+       │
+       ▼
+┌────────────────────────┐
+│ Final Safe Output      │
+│ (regression-verified) │
+└────────────────────────┘
 
 
 
 ---
 
-## 🧠 Agent Roles
+## Agent Roles
 
 ### Classifier Agent
 Determines:
@@ -43,7 +73,7 @@ Generates:
 
 ---
 
-## 📜 Contract-Based Engineering
+## Contract-Based Engineering
 
 ### 1. Schema Contract
 - Required fields
@@ -63,7 +93,7 @@ This is **unit testing for LLM behavior**.
 
 ---
 
-## 🧪 Prompt Regression Testing
+## Prompt Regression Testing
 
 Run the full regression suite:
 
@@ -71,14 +101,14 @@ Run the full regression suite:
 python -m eval.runners.run_eval
 
 ```
-## 🧠 LLM Backends
+## LLM Backends
 
 ```bash
 export USE_OLLAMA=1
 export PROMPT_VERSION=triage/v1
 export MODEL_VERSION=models/triage/v1.json
 ```
-## 🧾 Prompt Versioning
+## Prompt Versioning
 
 prompts/
 └── triage/
@@ -90,7 +120,7 @@ prompts/
         └── respond.md
 Change → test → promote.
 
-## 🚀 Deployment Options
+## Deployment Options
 
 ```bash
 PROMPT_VERSION=triage/v1
