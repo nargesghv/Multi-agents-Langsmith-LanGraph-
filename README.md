@@ -109,7 +109,7 @@ export PROMPT_VERSION=triage/v1
 export MODEL_VERSION=models/triage/v1.json
 ```
 ## Prompt Versioning
-
+```bash
 prompts/
 └── triage/
     ├── v1/
@@ -119,7 +119,7 @@ prompts/
         ├── classify.md
         └── respond.md
 Change → test → promote.
-
+```
 ## Deployment Options
 
 ```bash
